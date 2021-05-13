@@ -38,6 +38,8 @@ class Model
         $this->db->exec("DELETE FROM `{$this->name()}` WHERE `id` = {$id}");
     }
 
+    
+
     public function update()
     {
     }

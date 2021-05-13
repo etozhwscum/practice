@@ -12,6 +12,7 @@
 <body>
 <header>
     <nav class="navbar-container">
+       
         <a href="/site">Main</a>
         <a href="/site/news">News</a>
         <a href="/site/service">Service</a>
@@ -21,10 +22,10 @@
             <?php if ($_SESSION['user']['role'] == 1): ?>
                 <a href="/administration">Admin</a>
             <?php endif; ?>
-            <a href="/sign/logout">Logout</a>
+            <a href="/sign/logout">LogOut</a>
         <?php else: ?>
-            <a href="/sign/registration">Registration</a>
-            <a href="/sign/authentication">Authentication</a>
+            <a href="/sign/registration">SignUp</a>
+            <a href="/sign/authentication">SignIn</a>
         <?php endif; ?>
     </nav>
 </header>

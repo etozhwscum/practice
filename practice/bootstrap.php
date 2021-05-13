@@ -9,5 +9,6 @@ require_once 'models/Main.php';
 require_once 'models/Portfolio.php';
 require_once 'models/User.php';
 require_once 'models/News.php';
+require_once 'models/Comments.php';
 
 Route::start();

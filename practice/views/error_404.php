@@ -1,4 +1,2 @@
-<div class="container">
-    <p class="error">404</p>
-    <p class="description">Oops! Something went wrong</p><br>
-</div>
+<img src="../css/assets/image.webp" alt="cat">
+<h3>Вы потерялись. 404</h3>

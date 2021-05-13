@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost
--- Время создания: Сен 01 2020 г., 13:08
--- Версия сервера: 10.4.11-MariaDB
--- Версия PHP: 7.4.4
+-- Хост: 127.0.0.1:3306
+-- Время создания: Май 13 2021 г., 13:31
+-- Версия сервера: 10.3.13-MariaDB-log
+-- Версия PHP: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,8 +32,16 @@ CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_news` int(11) NOT NULL,
-  `text` int(11) NOT NULL
+  `text` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `comments`
+--
+
+INSERT INTO `comments` (`id`, `id_user`, `id_news`, `text`) VALUES
+(1, 7, 3, 'вцфвфц'),
+(2, 7, 3, 'вцфвфц');
 
 -- --------------------------------------------------------
 
@@ -63,8 +72,7 @@ CREATE TABLE `main` (
 --
 
 INSERT INTO `main` (`id`, `title`, `text`) VALUES
-(1, 'Добро пожаловать', 'Hello World!'),
-(2, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius mattis scelerisque. Nulla nisl ante, tincidunt ut nulla a, mollis scelerisque sem. Aenean suscipit velit sit amet turpis sollicitudin, et hendrerit neque laoreet. Aliquam vitae consequat libero. Pellentesque in pellentesque eros, at molestie ligula. Donec ut nunc ultricies, suscipit nulla non, eleifend justo. Nulla a volutpat felis, et tristique mauris. Proin sit amet laoreet augue, eu cursus quam. Nunc pharetra nisi accumsan neque volutpat pharetra. Nam commodo ultricies augue, at convallis dui porta eu. Phasellus molestie non arcu at maximus. Fusce sit amet sem erat. Vivamus felis neque, tristique a dui id, vestibulum lacinia orci. Nam fermentum consectetur tellus, porta sagittis elit aliquam et. In gravida purus vel enim feugiat, at pulvinar lorem pharetra.');
+(2, 'Анекдоты про Штирлица', '1. Штирлиц постучал в дверь. Никто не открыл. Штирлиц постучал сильнее, но ответа не было. Штирлиц забарабанил в дверь руками и ногами. Дверь не открывалась. Штирлиц разбежался и ударил в дверь головой. Дверь осталась закрыта. \"Никого нет дома\", – догадался Штирлиц.\r\n2. Штирлиц всю ночь топил камин. На утро камин утонул.\r\n3. Во время секретного совещания в бункер Гитлера с шашкой наголо ворвался Штирлиц и закричал:\r\n- Порублю, гады.\r\nГады скинулись по рублю. Штирлиц собрал деньги и ушел.');
 
 -- --------------------------------------------------------
 
@@ -77,6 +85,21 @@ CREATE TABLE `news` (
   `title` varchar(255) NOT NULL,
   `text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `text`) VALUES
+(3, 'внимание', 'сбежал анимешник'),
+(4, 'внимание', 'анимешник нашелся'),
+(5, 'внимание', 'анимешник опять сбежал\r\n'),
+(6, 'внимание', 'сбежал анимешник'),
+(7, 'внимание', 'анимешник нашелся'),
+(8, 'внимание', 'сбежал анимешник'),
+(9, 'внимание', 'анимешник нашелся'),
+(10, 'внимание', 'анимешник опять сбежал\r\n'),
+(11, 'внимание', 'сбежал анимешник');
 
 -- --------------------------------------------------------
 
@@ -147,7 +170,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `login`, `password`, `id_role`) VALUES
 (7, 'admin', 'admin', 1),
-(8, 'user', 'user', 2);
+(11, 'vitalik', '1234', 2),
+(12, 'glebka', '12345', 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -212,7 +236,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `contacts`
@@ -230,7 +254,7 @@ ALTER TABLE `main`
 -- AUTO_INCREMENT для таблицы `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `portfolio`
@@ -254,7 +278,7 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

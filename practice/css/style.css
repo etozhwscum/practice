@@ -1,81 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 * {
-    margin: 0 auto;
-    padding: 0;
+    margin: 0 auto; 
+    padding: 0; 
     font-family: 'Roboto', sans-serif;
     outline: none;
 }
-.navbar-container a {
-    text-decoration: none;
-    color: white;
-    width: 30px;
+.navbar-container a { 
+    text-decoration: none; 
+    color: white; 
+    width: 30px; 
     line-height: 35px;
-    transition: .2s all ease;
 }
-.navbar-container a:hover {
-    transform: scale(1.4);
+.item-container{
+    text-align: center;
+}
+.item-container p{
+    width: 500px;
+    text-align: left;
 }
 header {
-    width: 100%;
-    background-color: #0ec96c;
+    height: 4em;
+    width: 100%; 
+    background-color:#964ef5;
 }
 .navbar-container {
-    padding: 10px;
-    width: 59%;
-    display: flex;
-    justify-content: space-between;
+    padding: 14px; 
+    width: 59.38%;  
+    height: 44px; 
+    display: flex; 
+    justify-content: space-between; 
 }
 .sign-form {
-    display: flex;
+    display: flex; 
     flex-flow: column;
 }
 .sign-form h1 {
-    margin-bottom: 40px;
+    margin-bottom: 40px; 
     margin-top: 40px;
 }
 .sign-form label {
-    display: flex;
-    flex-flow: column;
-    font-size: 12px;
-    font-style: italic;
+    display: flex; 
+    flex-flow: column; 
+    font-size: 12px; 
+    font-style: italic; 
     margin-bottom: 25px;
 }
 .text-input {
-    font-size: 16px;
-    line-height: 32px;
-    border-radius: 5px;
-    border: .5px solid lightgray;
+    font-size: 16px; 
+    line-height: 32px; 
+    border-radius: 5px; 
+    border: .5px solid lightgray; 
     padding-left: 5px;
 }
 .text-input:focus {
     border: .5px solid black;
 }
-.sign-form input[type="submit"] {
-    font-size: 15px;
-    width: 125px;
-    height: 32px;
-    background-color: #333333;
-    border: none;
-    border-radius: 25px;
+.sign-form input[type="submit"] { 
+    font-size: 15px; width: 125px; 
+    height: 32px; 
+    background-color: #333333; 
+    border: none; 
+    border-radius: 25px; 
     color: white;
 }
 .error {
-    font-size: 14px;
+    font-size: 14px; 
     color: lightcoral;
 }
 .rollback {
-    font-size: 15px;
-    width: 115px;
-    height: 32px;
-    background-color: #0ec96c;
-    border: none;
+    font-size: 15px; 
+    width: 125px; 
+    height: 32px; 
+    background-color: #595959; 
+    border: none; 
+    border-radius: 5px; 
     color: white;
-    border-radius: 5px;
-    transition: .2s all ease;
 }
-.rollback:hover{
-    transform: scale(1.4);
-}
-.undefined-container {
+.undefined-container { 
     margin-top: 40px;
     height: 150px;
     display: flex;
@@ -92,9 +93,9 @@ header {
     padding: 5px;
 }
 caption {
-    background-color: lightgray;
-    color: black;
-    text-align: center
+    background-color: lightgray; 
+    color: black; 
+    text-align: center;
 }
 .delete {
     background-image: url("assets/delete.png");
@@ -107,18 +108,61 @@ caption {
 .change-link {
     color: white;
 }
-.add {text-decoration: none; color: dodgerblue; border: .5px solid dodgerblue; padding: 5px; line-height: 44px;}
-.container{
-    padding-top: 10%;
+.portfolio{
+    margin-left: 28.5em; 
+}
+.current_port{
+    border: 1px solid #ecebed ;
+    display: inline-block;
+    padding: 14px;
+}
+.portfolio__title{
+    color: white;
+    background-color: #b17cf7;
+    padding: 5px;
+}
+.portfolio__description{
+    padding: 5px;
+}
+.contacts{
+    margin-left: 28.5em;
+}
+.service{
+    margin-left: 28.5em;
+}
+.grid{
+    margin-left: 28.5em;
+}
+.grid-row{
+    border: 1px solid #ecebed ;
+    display: inline-block;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+.news__title{
+    color: white;
+    background-color: #b17cf7;
+    padding: 5px;
+}
+.news__description{
+    padding: 5px;
+}
+.error{
     text-align: center;
 }
-.container .error{
-    color: #E8E8E8;
+.error h1{
     font-size: 350px;
+    color: #E8E8E8;
 }
-.container .description{
-    opacity: 60%;
-    color: #FF0000;
+.error p{
     font-size: 36px;
+    color: #964ef5;
+    opacity: 60%;
 }
-
+.add {
+    text-decoration: none; 
+    color: dodgerblue; 
+    border: .5px solid dodgerblue; 
+    padding: 5px; 
+    line-height: 44px;
+}

@@ -3,7 +3,8 @@
 foreach ($data as $row) {
     ?>
     <div class="item-container">
-        <h3><?= $row['title']?></h3>
+        <br>
+        <h3><?= $row['title']?></h3><br>
         <p><?= $row['text']?></p>
     </div>
     <?php

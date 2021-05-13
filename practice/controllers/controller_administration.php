@@ -5,17 +5,23 @@ class controller_administration extends Controller
 {
     public function __construct()
     {
-        if($_SESSION['user']['role'] !== 1) $this->redirect('/404');
+        if ($_SESSION['user']['role'] !== 1) $this->redirect('/404');
     }
 
     public function action_index()
     {
-        $this->render('admin/index.php', 'Администрация',
+        $this->render(
+            'admin/index.php',
+            'Администрация',
             [
-                ['name' => 'user', 'model' => (new Model)->getTable('user'),
-                    'role' =>  function ($id) {return (new User)->getRole($id);}
-                    ],
-                ['name' => 'news', 'model' => (new Model)->getTable('news')]
+                [
+                    'name' => 'user', 'model' => (new Model)->getTable('user'),
+                    'role' =>  function ($id) {
+                        return (new User)->getRole($id);
+                    }
+                ],
+                ['name' => 'news', 'model' => (new Model)->getTable('news')],
+                ['name' => 'comments', 'model' => (new Model)->getTable('comments')],
             ]
         );
     }
@@ -24,6 +30,7 @@ class controller_administration extends Controller
     {
         if (isset($_POST['news'])) (new News)->delete($_POST['news']);
         if (isset($_POST['user'])) (new User)->delete($_POST['user']);
+        if (isset($_POST['comments'])) (new Comments)->delete($_POST['comments']);
         $this->redirect('/administration');
     }
 

@@ -12,15 +12,15 @@ class Route
 
 
         // получаем имя контроллера
-        if ( !empty($routes[1]) )
+        if ( !empty($routes[2]) )
         {
-            $controller_name = $routes[1];
+            $controller_name = $routes[2];
         }
 
         // получаем имя экшена
         if ( !empty($routes[2]) )
         {
-            $action_name = explode('?', $routes[2])[0];
+            $action_name = explode('?', $routes[3])[0];
         }
         // добавляем префиксы
         $model_name = 'Model_'.$controller_name;
